@@ -1,0 +1,20 @@
+#include <TinyWireM.h>
+#include <TM1637Display.h>
+const int CLK = 0;
+const int DIO = 1;
+TM1637Display display(CLK, DIO);
+const int BUTTON_PIN = 2;
+int counter = 0;
+int buttonState = 0;
+void setup() {
+  display.setBrightness(7);
+  pinMode(BUTTON_PIN، INPUT_PULLUP);
+}
+void loop() {
+  buttonState = digitalRead(BUTTON_PIN);
+  if (buttonState == LOW) {
+    counter++;
+    display.showNumberDec(counter);
+    delay(250);
+  }
+}
