@@ -8,7 +8,7 @@ int counter = 0;
 int buttonState = 0;
 void setup() {
   display.setBrightness(7);
-  pinMode(BUTTON_PIN، INPUT_PULLUP);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
 }
 void loop() {
   buttonState = digitalRead(BUTTON_PIN);
